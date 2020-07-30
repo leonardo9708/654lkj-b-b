@@ -39,4 +39,5 @@ cambiar archivo s3.sh
 y
 cd Documents/QRscan
 sudo rm -r logs_*cpu_serial*/*
+actualizar onble
 agregar nombreLocal.py
