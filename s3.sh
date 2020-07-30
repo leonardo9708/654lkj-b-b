@@ -12,4 +12,8 @@ echo $cpu
 path="/home/pi/Documents/QRscan/logs_"$cpu
 mkdir -p "$path"
 
-cd /home/pi/Documents/QRscan && sudo aws s3 cp "logs_"$cpu s3://reportes-lectora/logs_$cpu --recursive
+var=$(date +'%d-%m-%Y' --date="1 days ago")
+echo $var
+
+sudo aws s3 cp "/home/pi/Documents/QRscan/logs_"$cpu"/barcodes_"$cpu"_"$var"_"$cpu".csv" s3://reportes-lectora/logs_$cpu/barcodes_$var.csv
+sudo rm "/home/pi/Documents/QRscan/logs_"$cpu"/barcodes_"$cpu"_"$var"_"$cpu".csv"
